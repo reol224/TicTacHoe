@@ -47,7 +47,7 @@ ul {
 }
 
 .square.clicked {
-  transform: scale(1.0);
+  transform: scale(1.1);
 }
 
 .board-row:after {
@@ -64,11 +64,12 @@ ul {
 
 .game {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
 }
 
 .game-info {
-  margin-left: 20px;
+  margin-top: 20px;
 }
 
 .reset-button {
@@ -84,4 +85,53 @@ ul {
 
 .reset-button:hover {
   background-color: #2980b9;
+}
+
+@media (max-width: 600px) {
+  .game {
+    flex-direction: column; /* Stack columns on smaller screens */
+  }
+
+  .game-info {
+    margin-top: 20px; /* Add space between board and game info on smaller screens */
+  }
+
+  .square {
+    width: 40px; /* Adjust square size for smaller screens */
+    height: 40px;
+    font-size: 18px; /* Adjust font size for smaller screens */
+    line-height: 40px;
+  }
+
+  .reset-button {
+    padding: 10px 15px; /* Adjust button size for smaller screens */
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 601px) {
+  .game {
+    flex-direction: row; /* Switch back to row layout on larger screens */
+  }
+
+  .game-info {
+    margin-left: 20px;
+    margin-top: 0; /* Reset margin for larger screens */
+  }
+
+  .board {
+    max-width: 800px; /* Adjust maximum width for larger screens */
+  }
+
+  .square {
+    width: 80px; /* Adjust square size for larger screens */
+    height: 80px;
+    font-size: 36px; /* Adjust font size for larger screens */
+    line-height: 80px;
+  }
+
+  .reset-button {
+    padding: 15px 20px; /* Adjust button size for larger screens */
+    font-size: 18px;
+  }
 }
