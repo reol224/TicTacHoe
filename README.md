@@ -1,6 +1,5 @@
 Tic Tac hit your toe.
+Github pages, I'll-!!!
 
+![Animation](https://github.com/reol224/TicTacHoe/assets/27915379/848ef20e-c947-401f-80f3-6e35a1b9a423)
 
-
-
-![giphy](https://github.com/reol224/TicTacHoe/assets/27915379/faa65d6e-7de9-494e-a2a2-8a7813af396a)
