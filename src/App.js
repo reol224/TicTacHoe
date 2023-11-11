@@ -17,6 +17,11 @@ function calculateWinner(squares) {
       return squares[a];
     }
   }
+
+  if(squares.every((square) => square !== null)){
+    return "No one. It's a tie."
+  }
+
   return null;
 }
 
