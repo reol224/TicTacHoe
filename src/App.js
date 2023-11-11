@@ -31,6 +31,7 @@ function Square({ value, onSquareClick }) {
 export default function Board() {
   const [xIsNext, setXIsNext] = useState(true);
   const [squares, setSquares] = useState(Array(9).fill(null));
+  const winner = calculateWinner(squares);
 
   function handleClick(i) {
     if (squares[i] || calculateWinner(squares)) return;
@@ -42,6 +43,11 @@ export default function Board() {
     }
     setSquares(nextSquares);
     setXIsNext(!xIsNext);
+  }
+
+  function resetGame() {
+    setSquares(Array(9).fill(null));
+    setXIsNext(true);
   }
 
   return (
@@ -57,6 +63,14 @@ export default function Board() {
           ))}
         </div>
       ))}
+      <div className="game-status">
+        {winner ? `Winner: ${winner}` : `Next player: ${xIsNext ? "X" : "O"}`}
+      </div>
+      {winner && (
+        <button className="reset-button" onClick={resetGame}>
+          Start again?
+        </button>
+      )}
     </div>
   );
 }
